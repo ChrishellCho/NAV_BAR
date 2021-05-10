@@ -1,0 +1,93 @@
+:root {
+  --text-color: black;
+  --background-color: #f3e5f5;
+  --accent-color: #836fa9;
+  --nav-bar-font: "Noto Sans JP", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  align-items: center;
+  background-color: var(--background-color);
+  font-family: var(--nav-bar-font);
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.menulist {
+  display: flex;
+  padding-left: 0;
+}
+
+.menulist li {
+  padding: 8px 12px;
+}
+
+.menulist li:hover {
+  /*li :hover 띄어쓰기해 사용하니 패딩안쪽부분만 색이 변함. 띄어쓰기 하지 말 것*/
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons li {
+  padding: 8px 6px;
+}
+
+.toggleBtn {
+  display: none;
+  font-size: 24px;
+  position: absolute;
+  right: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menulist {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .toggleBtn {
+    display: block;
+  }
+
+  .menulist.active,
+  .icons.active {
+    display: flex;
+  }
+}
